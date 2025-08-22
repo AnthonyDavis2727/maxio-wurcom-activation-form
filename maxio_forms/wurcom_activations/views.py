@@ -36,16 +36,16 @@ def WurcomActivationView(request):
                         "organization": data.get("organization")
                     },
                     "metafields": {
-                        "building": data.get("building_name"),
-                        "service_address": data.get("service_address"),
+                        "Building Name": data.get("building_name"),
+                        "Service Address": data.get("service_address"),
                         "city": data.get("city"),
                         "state": data.get("state"),
                         "zip": data.get("zip"),
-                        "monitoring_email": data.get("monitoring_email"),
-                        "monitoring_phone": data.get("monitoring_phone"),
-                        "wurcom_unit_1": data.get("wurcom_unit_1"),
-                        "wurcom_location_1": data.get("wurcom_location_1"),
-                        "wurcom_serial_1": data.get("wurcom_serial_1")
+                        "Monitoring Service - Email Address": data.get("monitoring_email"),
+                        "Monitoring Service - Phone Number": data.get("monitoring_phone"),
+                        "Car Station 1 - Car Designation": data.get("wurcom_unit_1"),
+                        "SIM 1": data.get("wurcom_location_1"),
+                        "Car Station 1 - Serial Number": data.get("wurcom_serial_1")
                     }
                 }
             }
