@@ -18,7 +18,7 @@ function addWurcomUnit() {
     // Create a label and input for the new unit name
     let nameLabel = document.createElement("label");
     nameLabel.setAttribute("for", `wurcom_unit_${unitCount}`);
-    nameLabel.textContent = `Wur-Com Name #${unitCount} *: `;
+    nameLabel.textContent = `Wur-Com Name ${unitCount} *: `;
     let nameInput = document.createElement("input");
     nameInput.id = `wurcom_unit_${unitCount}`;
     nameInput.type = "text";
@@ -28,7 +28,7 @@ function addWurcomUnit() {
     // Create a label and select for the new unit location
     let locationLabel = document.createElement("label");
     locationLabel.setAttribute("for", `wurcom_location_${unitCount}`);
-    locationLabel.textContent = `Wur-Com Location #${unitCount} *: `;
+    locationLabel.textContent = `Lobby/Car Station *: `;
     let locationSelect = document.createElement("select");
     locationSelect.id = `wurcom_location_${unitCount}`;
     locationSelect.name = `wurcom_location_${unitCount}`;
@@ -53,7 +53,7 @@ function addWurcomUnit() {
     // Create a label and select for the new unit type
     let typeLabel = document.createElement("label");
     typeLabel.setAttribute("for", `wurcom_type_${unitCount}`);
-    typeLabel.textContent = `Wur-Com type #${unitCount} *: `;
+    typeLabel.textContent = `Wur-Com Type *: `;
     let typeSelect = document.createElement("select");
     typeSelect.id = `wurcom_type_${unitCount}`;
     typeSelect.name = `wurcom_type_${unitCount}`;
@@ -78,7 +78,7 @@ function addWurcomUnit() {
     // Create a label and input for the new unit serial number
     let serialLabel = document.createElement("label");
     serialLabel.setAttribute("for", `wurcom_serial_${unitCount}`);
-    serialLabel.textContent =  ` Wur-Com Serial #${unitCount} *: `;
+    serialLabel.textContent =  ` Wur-Com Serial ${unitCount} *: `;
     let serialInput = document.createElement("input");
     serialInput.id = `wurcom_serial_${unitCount}`;
     serialInput.type = "text";
