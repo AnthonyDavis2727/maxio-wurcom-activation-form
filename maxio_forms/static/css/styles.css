@@ -252,3 +252,20 @@ hr {
 .alert.error {
   background-color: #f44336;
 }
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #modal {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .field-layout {
+        flex-direction: column;
+    }
+
+    .field-layout > div {
+        width: 100%;
+    }
+}
