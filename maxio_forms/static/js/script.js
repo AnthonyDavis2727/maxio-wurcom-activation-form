@@ -66,13 +66,13 @@ function addWurcomUnit() {
     typeSelect.appendChild(typeOption0);
 
     let typeOption1 = document.createElement("option");
-    typeOption1.value = "car_station";
-    typeOption1.textContent = "Car Station";
+    typeOption1.value = "Wur-Com Plus";
+    typeOption1.textContent = "Wur-Com Plus";
     typeSelect.appendChild(typeOption1);
 
     let typeOption2 = document.createElement("option");
-    typeOption2.value = "lobby";
-    typeOption2.textContent = "Lobby Station";
+    typeOption2.value = "Wur-Com Standard";
+    typeOption2.textContent = "Wur-Com Standard";
     typeSelect.appendChild(typeOption2);
 
     // Create a label and input for the new unit serial number

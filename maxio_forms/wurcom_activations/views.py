@@ -24,7 +24,6 @@ def WurcomActivationView(request):
 
 
             # Prepare data for API request
-            # Assuming the API expects the data in a specific format, you might need to map the form fields to the API fields
             api_data = {
                 "subscription": {
                     "product_handle": "wur-com-saas",
@@ -49,9 +48,18 @@ def WurcomActivationView(request):
                     }
                 }
             }
+    
+            # Loop through the data dictionary to populate wurcom unit fields in api_data dict dynamically
+            for i in range(2, 21):
+                if not data.get(f"wurcom_unit_{i}"):
+                    break
+                else:
+                    api_data['subscription']['metafields'][f"Car Station {i} - Car Designation"] = data.get(f"wurcom_unit_{i}")
+                    api_data['subscription']['metafields'][f"SIM {i}"] = data.get(f"wurcom_location_{i}")
+                    api_data['subscription']['metafields'][f"Car Station {i} - Serial Number"] = data.get(f"wurcom_serial_{i}")
 
             response = requests.post(url, headers=headers, auth=(username, password), json=api_data)
-            if response.status_code == 200:
+            if response.status_code == 200 or response.status_code == 201:
                 return JsonResponse({'status': 'success', 'data': response.json()})
             else:
                 return JsonResponse({'status': 'error', 'message': response.text}, status=response.status_code)
