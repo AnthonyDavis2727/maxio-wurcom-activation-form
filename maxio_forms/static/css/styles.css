@@ -47,6 +47,21 @@ dialog::backdrop {
   animation: fadeIn 0.3s forwards;
 }
 
+dialog {
+    position: relative;
+}
+
+#closeModal {
+    position: absolute;
+    cursor: pointer;
+    top: -5px;
+    right: 7px;
+    color: red;
+    font-weight: bold;
+    font-size: 3vh;
+    margin: 0;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -192,14 +207,10 @@ hr {
     height: 17px;
     border: none;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #ff5f6d, #f51515);
-    color: white;
-    font-size: 20px;
+    color: red;
+    font-size: 3vh;
     line-height: 1;
     font-weight: bold;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6),
-                0 2px 6px rgba(0,0,0,0.3);
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     overflow: hidden;
@@ -285,14 +296,10 @@ hr {
         height: 17px;
         border: none;
         border-radius: 50%;
-        background: linear-gradient(to bottom, #ff5f6d, #f51515);
-        color: white;
-        font-size: 20px;
+        color: red;
+        font-size: 4vh;
         line-height: 1;
         font-weight: bold;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.6),
-                    0 2px 6px rgba(0,0,0,0.3);
-        text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
         cursor: pointer;
         transition: all 0.2s ease-in-out;
         overflow: hidden;
@@ -318,4 +325,20 @@ hr {
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.8),
                     0 4px 10px rgba(0,0,0,0.4);
     }
+
+    dialog {
+    position: relative;
+    }
+
+    #closeModal {
+        position: absolute;
+        cursor: pointer;
+        top: -5px;
+        right: 7px;
+        color: red;
+        font-weight: bold;
+        font-size: 4vh;
+        margin: 0;
+    }
+
 }
