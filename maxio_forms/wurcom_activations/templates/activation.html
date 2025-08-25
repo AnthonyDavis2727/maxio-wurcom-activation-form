@@ -8,6 +8,16 @@
     <title>Practice Form</title>
 </head>
 <body>
+    {% if messages %}
+        <div id="message-container">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <button id="openModal">Open Modal</button>
     <dialog id="modal">
         <div class="container">

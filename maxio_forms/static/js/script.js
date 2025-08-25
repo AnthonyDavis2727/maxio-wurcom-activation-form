@@ -130,3 +130,13 @@ openModalButton.addEventListener("click", () => {
 closeModalButton.addEventListener("click", () => {
     formModal.close();
 })
+
+
+// JS for auto hiding the success/failure pop-up messages after 3 seconds
+setTimeout(function() {
+    const messages = document.querySelectorAll('#message-container .alert');
+    messages.forEach(msg => {
+      msg.style.opacity = '0';
+      setTimeout(() => msg.remove(), 500);  // remove after fade out
+    });
+  }, 3000);

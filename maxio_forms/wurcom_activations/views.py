@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib import messages
 from django.http import JsonResponse
 import requests
 import os
@@ -58,12 +59,19 @@ def WurcomActivationView(request):
                     api_data['subscription']['metafields'][f"SIM {i}"] = data.get(f"wurcom_location_{i}")
                     api_data['subscription']['metafields'][f"Car Station {i} - Serial Number"] = data.get(f"wurcom_serial_{i}")
 
+            # Provide success/failure message after form is submitted.
             response = requests.post(url, headers=headers, auth=(username, password), json=api_data)
             if response.status_code == 200 or response.status_code == 201:
-                return JsonResponse({'status': 'success', 'data': response.json()})
+                messages.success(request, "Activation submitted successfully.")
+                return redirect('wurcom_activation')
+                # return JsonResponse({'status': 'success', 'data': response.json()})
             else:
-                return JsonResponse({'status': 'error', 'message': response.text}, status=response.status_code)
+                messages.error(request, f"Error submitting activation. Please try again.")
+                return redirect('wurcom_activation')
+                # return JsonResponse({'status': 'error', 'message': response.json()}, status=response.status_code)
     except Exception as e:
-        return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+        messages.error(request, f"An unexpected error occurred: {str(e)}")
+        return redirect('wurcom_activation')
+        # return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
     
     return render(request, 'activation.html', {})
